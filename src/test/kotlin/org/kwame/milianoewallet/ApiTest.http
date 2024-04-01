@@ -1,0 +1,25 @@
+
+GET http://127.0.0.1:51900/
+
+<> 2024-03-31T162645.404.json
+
+###
+
+GET http://127.0.0.1:52015/api/users
+
+###
+
+POST http://127.0.0.1:51900/api/users
+Content-Type: application/json
+
+{
+  "name": "keven Doe",
+  "email": "kevin@example.com"
+}
+
+<> 2024-03-31T162915.201.json
+
+###
+
+GET http://127.0.0.1:52015/api/users/1
+

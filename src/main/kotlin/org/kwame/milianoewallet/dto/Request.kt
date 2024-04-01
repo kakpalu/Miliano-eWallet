@@ -1,0 +1,31 @@
+package org.kwame.milianoewallet.dto
+
+import org.kwame.milianoewallet.model.User
+
+/**
+ * This file contains all incoming DTOs.
+ * Here, [LoginDto] is a data class containing immutable class members
+ */
+data class LoginDto(
+    val email: String,
+    val password: String,
+)
+
+data class RegisterDto(
+    val email: String,
+    val password: String,
+)
+
+
+data class CreateTransactionDto(
+    val name: String,
+    val count: Int,
+    val note: String?,
+)
+
+data class UpdateTransactionDto(
+    val id: Long,
+    val name: String,
+    val count: Int,
+    val note: String?,
+)

@@ -14,6 +14,6 @@ RUN mvn dependency:resolve
 
 COPY . $PROJECT_DIR
 
-EXPOSE 8084
+CMD mvn spring-boot:run
 
-CMD mvn clean install && mvn spring-boot:run
+EXPOSE 8081
