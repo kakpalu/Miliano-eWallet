@@ -12,15 +12,15 @@ import org.springframework.web.bind.annotation.*
 @RestController
 @RequestMapping("/api")
 class TransactionController(
-    val transactionManager: TransactionManager,
+    val transactionService: TransactionService,
 ) {
 
     @PostMapping("/transactions")
-    fun createWallet(
+    fun createTransaction(
         @RequestBody payload: TransactionDto,
         authentication: Authentication
     ): ResponseEntity<Transaction> {
-        val transaction = transactionManager.createTransaction(
+        val transaction = transactionService.createTransaction(
             sender = authentication.toUser(),
             transactionData = payload
         )
@@ -29,7 +29,7 @@ class TransactionController(
 
     @GetMapping("/transactions")
     fun getTransactions(): ResponseEntity<List<Transaction>> {
-        val transactions = transactionManager.getTransactions()
+        val transactions = transactionService.getTransactions()
         return ResponseEntity(transactions, HttpStatus.OK)
     }
 

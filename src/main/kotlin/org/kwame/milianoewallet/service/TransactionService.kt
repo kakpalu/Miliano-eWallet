@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service
 import java.util.*
 
 @Service
-class TransactionManager ( private val transactionRepository: TransactionRepository) {
+class TransactionService (private val transactionRepository: TransactionRepository) {
     fun createTransaction(sender: User, transactionData: TransactionDto): Transaction {
         val transaction = Transaction(
             sender = sender,

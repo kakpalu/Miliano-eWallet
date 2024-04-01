@@ -16,14 +16,21 @@ import java.util.*
 
 data class LoginResponseDto(
     val token: String,
+    val user: UserDto
 )
 
+
+data class WalletDto(
+    val id: Long,
+    val balance: Double,
+    val currency: Currency,
+)
 data class UserDto(
     val id: Long,
     val firstName: String,
     val lastName: String,
     val email: String,
-    val wallet: Optional<Wallet>,
+    val wallet: WalletDto?,
 )
 
 data class TransactionDto(

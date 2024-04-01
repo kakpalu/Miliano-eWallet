@@ -19,7 +19,7 @@ import java.time.temporal.ChronoUnit
 class TokenService(
     private val jwtDecoder: JwtDecoder,
     private val jwtEncoder: JwtEncoder,
-    private val userManager: UserManager
+    private val userService: UserService
 ) {
     fun createToken(user: User): String {
         val jwsHeader = JwsHeader.with { "HS256" }.build()
@@ -36,7 +36,7 @@ class TokenService(
         return try {
             val jwt = jwtDecoder.decode(token)
             val userId = jwt.claims["userId"] as Long
-            userManager.getUser(userId)
+            userService.getUser(userId)
         } catch (e: Exception) {
             null
         }

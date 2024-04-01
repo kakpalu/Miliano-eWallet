@@ -5,7 +5,7 @@ import org.kwame.milianoewallet.repository.UserRepository
 import org.springframework.stereotype.Service
 
 @Service
-class UserManager(private val userRepository: UserRepository) {
+class UserService(private val userRepository: UserRepository) {
 
     fun createUser(user: User): User {
         return userRepository.save(user)

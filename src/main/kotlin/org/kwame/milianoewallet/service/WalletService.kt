@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service
 import java.util.*
 
 @Service
-class WalletManager(private val walletRepository: WalletRepository) {
+class WalletService(private val walletRepository: WalletRepository) {
 fun createWallet(wallet: Wallet): Wallet {
         return walletRepository.save(wallet)
     }

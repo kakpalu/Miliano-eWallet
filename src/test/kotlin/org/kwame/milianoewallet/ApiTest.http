@@ -1,5 +1,11 @@
 
-GET http://127.0.0.1:51900/
+POST http://127.0.0.1:52015/api/login
+Content-Type: application/json
+
+{
+  "email": "kwame@example.com",
+  "password": "admin"
+}
 
 <> 2024-03-31T162645.404.json
 
